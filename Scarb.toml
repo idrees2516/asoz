@@ -1,0 +1,11 @@
+[package]
+name = "asoz"
+version = "0.1.0"
+edition = "2023_01"
+
+[dependencies]
+starknet = ">=2.3.0"
+alexandria_math = { git = "https://github.com/keep-starknet-strange/alexandria.git" }
+alexandria_data_structures = { git = "https://github.com/keep-starknet-strange/alexandria.git" }
+
+[[target.starknet-contract]]
