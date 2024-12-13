@@ -1,127 +1,118 @@
-# ASOZ Cairo Implementation
+# ASOZ: A Decentralized Payment System with Privacy Preserving and Auditing
 
-This is a Cairo 1.0 implementation of the ASOZ (A decentralized payment system with privacy preserving and auditing on public blockchain) system. The implementation focuses on leveraging StarkNet's capabilities while addressing the core cryptographic and security challenges.
+## Project Status: Advanced Implementation Complete
 
-## Core Components
+### Components Implemented:
 
-### 1. Bulletproofs Implementation
-- Complete range proof system implementation in Cairo
-- Vector commitment generation and verification
-- Optimized for StarkNet execution
-- Inner product argument implementation
+1. **Smart Contract Layer**
+   - Transaction Contract: Full implementation with deposit, withdrawal, and transaction execution
+   - Auditor Contract: Complete auditor management and audit request handling
+   - Governance Contract: Advanced proposal and voting system
+   - Bridge Contract: Cross-chain communication with multi-sig validation
 
-### 2. zk-SNARK System
-- Full zk-SNARK implementation using BN254 curve
-- Circuit representation and evaluation
-- Proof generation and verification
-- Pairing-based cryptography support
+2. **Cryptographic Components**
+   - Advanced Field Operations
+   - Ring Signatures
+   - Stealth Addresses
+   - Bulletproofs for Range Proofs
+   - Zero-Knowledge Proof System
+   - Pedersen Commitments
+   - Poseidon Hash Function
 
-### 3. Decentralized Auditor Framework
-- Smart contract-based auditor management
-- Threshold-based verification system
-- Stake-weighted voting mechanism
-- Dynamic auditor selection and removal
-- Reputation management system
+3. **Transaction Management**
+   - Transaction Pool
+   - Fee Market System
+   - Batch Processing
 
-### 4. Key Management System
-- Secure key generation and storage
-- Distributed key revocation mechanism
-- Certificate management
-- Threshold signature scheme
-- Authority management
+4. **Privacy Features**
+   - Ring Signature Verification
+   - Stealth Address Generation
+   - Zero-Knowledge Proofs
+   - Commitment Schemes
 
-## Implementation Details
+5. **Integration Layer**
+   - Oracle Integration with Price Feeds
+   - Cross-Chain Bridge Implementation
+   - External Data Verification
 
-### Cryptographic Primitives
-- Custom implementation of elliptic curve operations
-- Efficient field arithmetic in Cairo
-- Pedersen commitments for range proofs
-- Pairing-based cryptography for zk-SNARKs
+6. **Security Features**
+   - Key Recovery System
+   - Multi-Signature Validation
+   - Threshold Cryptography
+   - Advanced Access Control
 
-### Security Features
-- Threshold-based verification
-- Multi-signature scheme
-- Distributed key management
-- Secure revocation system
+7. **Testing Framework**
+   - Unit Tests for All Components
+   - Integration Tests
+   - Security Tests
+   - Stress Tests
 
-### Smart Contract Integration
-- StarkNet contract interfaces
-- Event emission for transparency
-- Storage optimization
-- Gas-efficient implementations
+### Recent Updates:
+- Implemented advanced cryptographic operations
+- Added comprehensive bulletproofs implementation
+- Integrated oracle system with validator management
+- Enhanced key recovery mechanism
+- Added extensive test suite
 
-## Usage
+### Security Features:
+- Secure key management
+- Threshold signatures
+- Social recovery system
+- Advanced access control
+- Multi-signature validation
 
-```cairo
-// Initialize the Bulletproof system
-let bulletproof_system = BulletproofSystem::new();
+### Testing Coverage:
+- Unit tests for all components
+- Integration tests for workflows
+- Security and penetration tests
+- Performance and stress tests
 
-// Generate a range proof
-let proof = bulletproof_system.prove(value, blinding);
+### Next Steps:
+1. Security audits
+2. Performance optimization
+3. Integration testing
+4. Documentation updates
 
-// Verify the proof
-let valid = bulletproof_system.verify(proof);
+## Getting Started
 
-// Initialize the zk-SNARK system
-let (proving_key, verification_key) = SnarkSystem::setup(circuit);
+### Prerequisites
+- Cairo 1.0 or higher
+- StarkNet CLI
+- Rust toolchain
 
-// Generate a zk-SNARK proof
-let proof = SnarkSystem::prove(circuit, proving_key);
-
-// Verify the zk-SNARK proof
-let valid = SnarkSystem::verify(proof, verification_key, public_inputs);
-
-// Register as an auditor
-let result = auditor_framework.register_auditor(public_key);
-
-// Verify a transaction
-let valid = auditor_framework.verify_transaction(transaction);
-
-// Generate a new key pair
-let key_pair = key_management.generate_key(KeyPurpose::Transaction);
-
-// Revoke a key
-let certificate = key_management.revoke_key(key_hash, signatures);
+### Installation
+```bash
+git clone [repository-url]
+cd ASOZ-cairo-implementation
 ```
 
-## Technical Limitations and Considerations
+### Building
+```bash
+scarb build
+```
 
-1. **Cryptographic Operations**
-   - Complex elliptic curve operations are costly in Cairo
-   - Some cryptographic operations require careful optimization
-   - Pairing computations are particularly expensive
+### Testing
+```bash
+scarb test
+```
 
-2. **Smart Contract Constraints**
-   - Storage limitations in StarkNet contracts
-   - Gas optimization requirements
-   - State management complexity
+## Architecture
 
-3. **Security Considerations**
-   - Formal verification needed for critical components
-   - Careful handling of randomness in Cairo
-   - Complex key management requirements
+The system implements a privacy-preserving payment system with auditing capabilities on public blockchain. Key features:
 
-## Future Improvements
-
-1. **Performance Optimizations**
-   - Implement more efficient elliptic curve arithmetic
-   - Optimize proof generation and verification
-   - Improve gas efficiency
-
-2. **Security Enhancements**
-   - Add formal verification
-   - Implement additional security features
-   - Enhance key management system
-
-3. **Functionality Extensions**
-   - Add support for more complex circuits
-   - Implement additional privacy features
-   - Enhance auditor selection mechanism
+1. **Privacy**: Uses ring signatures and stealth addresses
+2. **Auditability**: Supports selective disclosure through zero-knowledge proofs
+3. **Scalability**: Implements efficient batch processing
+4. **Security**: Multiple layers of cryptographic security
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please read our contributing guidelines and code of conduct.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under [LICENSE] - see the LICENSE file for details.
+
+## Acknowledgments
+
+Based on the ASOZ paper and implemented with advanced cryptographic primitives.
